@@ -21,6 +21,7 @@ class NotesApi implements NotesApiProtocol {
   }) =>
       Future.delayed(
         const Duration(seconds: 2),
+        // Comparing login handle foobar.
         () => loginHandle == const LoginHandle.fooBar() ? mockNotes : null,
       );
 }

@@ -10,10 +10,12 @@ import 'app_state.dart';
 class AppBloc extends Bloc<AppAction, AppState> {
   final LoginApiProtocol loginApiProtocol;
   final NotesApiProtocol notesApiProtocol;
+  final LoginHandle acceptedLoginHandle;
 
   AppBloc({
     required this.loginApiProtocol,
     required this.notesApiProtocol,
+    required this.acceptedLoginHandle,
   }) : super(const AppState.empty()) {
     // Handle the LoginAction in the constructor.
     on<LoginAction>((event, emit) async {
@@ -57,7 +59,7 @@ class AppBloc extends Bloc<AppAction, AppState> {
 
       // Get the login handle.
       final loginHandle = state.loginHandle;
-      if (loginHandle != const LoginHandle.fooBar()) {
+      if (loginHandle != acceptedLoginHandle) {
         // Invalid login handle, cannot fetch notes.
         emit(
           AppState(

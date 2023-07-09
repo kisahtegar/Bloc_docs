@@ -1,16 +1,15 @@
 # notes_with_login_app
+A new Flutter project. make simple app that have login features and showing list of notes, and make app can be testing.
 
-A new Flutter project.
+## 📋 Previews
+This the output after running the project.
+<p align="left">
+  <img src="https://raw.githubusercontent.com/kisahtegar/bloc_docs/main/demos/vandad_course/notes_with_login_app/previews/1.png"/>
+  <img src="https://raw.githubusercontent.com/kisahtegar/bloc_docs/main/demos/vandad_course/notes_with_login_app/previews/2.png"/>
+  <img src="https://raw.githubusercontent.com/kisahtegar/bloc_docs/main/demos/vandad_course/notes_with_login_app/previews/3.png"/>
+  <img src="https://raw.githubusercontent.com/kisahtegar/bloc_docs/main/demos/vandad_course/notes_with_login_app/previews/4.png"/>
+</p>
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## 📝 Bloc Note
+This link contains a Testing Application:
+- [docs: learning about BLoC](https://bloclibrary.dev/#/gettingstarted)
