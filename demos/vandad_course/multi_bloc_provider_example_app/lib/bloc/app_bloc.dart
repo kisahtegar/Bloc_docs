@@ -9,6 +9,9 @@ import 'bloc_events.dart';
 /// function to pick random url.
 typedef AppBlocRandomUrlPicker = String Function(Iterable<String> allUrls);
 
+/// function url loader.
+typedef AppBlocUrlLoader = Future<Uint8List> Function(String url);
+
 /// This extension is used to get random element.
 extension RandomElement<T> on Iterable<T> {
   T getRandomElement() => elementAt(
@@ -21,10 +24,16 @@ class AppBloc extends Bloc<AppEvent, AppState> {
   /// This private function will pick random url.
   String _pickRandomUrl(Iterable<String> allUrls) => allUrls.getRandomElement();
 
+  /// This function will load url and return a data.
+  Future<Uint8List> _loadUrl(String url) => NetworkAssetBundle(Uri.parse(url))
+      .load(url)
+      .then((byteData) => byteData.buffer.asUint8List());
+
   AppBloc({
     required Iterable<String> urls,
     Duration? waitBeforeLoading,
     AppBlocRandomUrlPicker? urlPicker, // dependencies injection.
+    AppBlocUrlLoader? urlLoader, // Dependencies injection
   }) : super(const AppState.empty()) {
     // Load next url event.
     on<LoadNextUrlEvent>((event, emit) async {
@@ -37,8 +46,10 @@ class AppBloc extends Bloc<AppEvent, AppState> {
         ),
       );
 
-      // Pick the url
+      // Either take urlPicker that is provided to us an optional parameter,
+      // or we use our in it built in _pickRandomUrl functions.
       final url = (urlPicker ?? _pickRandomUrl)(urls);
+
       try {
         // This going to create artifical weight wich allow circular progress
         // indicator to be displayed for while.
@@ -46,11 +57,9 @@ class AppBloc extends Bloc<AppEvent, AppState> {
           await Future.delayed(waitBeforeLoading);
         }
 
-        // Create network asset bundle.
-        final bundle = NetworkAssetBundle(Uri.parse(url));
-
-        // load contents from bundle.
-        final data = (await bundle.load(url)).buffer.asUint8List();
+        // Either take urlLoader that is provided to us an optional parameter,
+        // or we use our in it built in _loadUrl functions.
+        final data = await (urlLoader ?? _loadUrl)(url);
 
         // Emit data.
         emit(

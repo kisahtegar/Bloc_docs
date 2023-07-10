@@ -5,7 +5,7 @@ this app will have 2 instances of Bloc, TopBloc and BottomBloc that showing imag
 ## 📋 Previews
 This the output after running the project.
 <p align="left">
-  <img src="https://raw.githubusercontent.com/kisahtegar/bloc_docs/main/demos/vandad_course/multi_bloc_provider_example_app/preview.png"/>
+  <img src="https://raw.githubusercontent.com/kisahtegar/bloc_docs/main/demos/vandad_course/multi_bloc_provider_example_app/preview.png" width="200"/>
 </p>
 
 ## 📝 Bloc Note
