@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "739324804350",
+    "project_id": "my-photo-library-app",
+    "storage_bucket": "my-photo-library-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:739324804350:android:84cc1bf97f0babb8e679af",
+        "android_client_info": {
+          "package_name": "com.example.photo_library_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "739324804350-d23jp9lpbrla986j3e0gveito7jmor3a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyClBxFmleS1-eGsUkODYHfrfJ0BO22Osvk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "739324804350-d23jp9lpbrla986j3e0gveito7jmor3a.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
